@@ -1,0 +1,30 @@
+section.doors
+  .doors__body
+    .doors__top
+      include ../sidebar/sidebar.pug
+      .doors__content
+        .doors__breadcrumbs.breadcrumbs
+          nav.breadcrumbs__nav
+            ul.breadcrumbs__list
+              li.breadcrumbs__list-item
+                a.breadcrumbs__link(href="#!") Главная
+              li.breadcrumbs__list-item
+                span.breadcrumbs__link.active Двери
+        .doors__content-info
+          h1.doors__content-title Двери
+          h2.doors__content-desc 
+            span.doors__content-desc-mark Более 850 моделей
+            | в каталоге от 18 производителей
+        button.doors__choice-button(type="button")
+          span Выберете какая дверь вам нужна
+          span.icon-arrow-short-down
+    .doors__main
+      .doors__categories
+        ul.doors__categories-list
+          li
+            .doors__categories-card
+              img.doors__categories-card-image(src="imgs/doors/hidden.webp")
+              .doors__categories-card-content
+                h6.doors__categories-card-title Скрытые
+                a.button(href="#!") Подробнее
+                  span.icon-arrow-right

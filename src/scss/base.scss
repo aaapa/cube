@@ -1,14 +1,18 @@
 @import url("../components/header/header.scss");
+@import url("../components/breadcrumbs/breadcrumbs.scss");
+@import url("../components/button/button.scss");
 @import url("../components/footer/footer.scss");
 
 @import url("../blocks/home/home.scss");
 @import url("../blocks/sidebar/sidebar.scss");
+@import url("../blocks/doors/doors.scss");
 
 *,
 *::before,
 *::after {
   margin: 0px;
   padding: 0px;
+  font-size: 100%;
   list-style: none;
   box-sizing: border-box;
   transition: all 0.15s ease-out;

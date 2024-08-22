@@ -1,0 +1,139 @@
+.doors {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  &__body {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__top {
+    display: flex;
+  }
+
+  &__content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__breadcrumbs {
+    padding: 32px 32px 0px 80px;
+  }
+
+  &__content-info {
+    padding: $padding;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__content-title {
+    font-weight: 600;
+    font-size: clamp(4rem, 10vw, 14.375rem);
+  }
+
+  &__content-desc {
+    max-width: 800px;
+    font-weight: 400;
+    text-align: center;
+    line-height: 120%;
+    font-size: clamp(1.5rem, 5vw, 3.3125rem);
+  }
+
+  &__content-desc-mark {
+    color: $yellowColor;
+    margin: 0px 15px 0px 0px;
+  }
+
+  &__choice-button {
+    width: 100%;
+    min-height: 105px;
+    color: white;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background-color: transparent;
+    border-top: $border;
+    border-bottom: $border;
+    font-weight: 600;
+    line-height: 120%;
+    font-size: clamp(1rem, 5vw, 1.875rem);
+
+    &:hover {
+      cursor: pointer;
+      opacity: $opacity;
+    }
+
+    &:active {
+      opacity: 0.3;
+    }
+  }
+
+  &__main {
+    width: 100%;
+    padding: 120px 80px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__categories {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &-list {
+      width: 100%;
+      display: flex;
+      gap: 40px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &-card {
+      min-width: 384px;
+      min-height: 641px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      mix-blend-mode: overlay;
+      background-color: mix($yellowColor, white, 85%);
+
+      & * {
+        z-index: 2;
+      }
+
+      &-image {
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        object-fit: cover;
+      }
+
+      &-content {
+        width: 100%;
+        padding: 45px 40px;
+        display: flex;
+        gap: 40px;
+        flex-direction: column;
+        position: absolute;
+        left: 0px;
+        bottom: 0px;
+      }
+
+      &-title {
+        font-weight: 600;
+        font-size: clamp(1rem, 5vw, 2.25rem);
+      }
+    }
+  }
+}
