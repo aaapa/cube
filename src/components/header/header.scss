@@ -1,0 +1,253 @@
+.header {
+  width: 100%;
+  min-height: 105px;
+  display: flex;
+  border-bottom: $border;
+
+  &__body {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    gap: 20px;
+  }
+
+  &__logo {
+    color: $yellowColor;
+    min-width: 105px;
+    min-height: 105px;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: clamp(1.2rem, 5vw, 5rem);
+    border-right: $border;
+
+    &:hover {
+      opacity: $opacity;
+    }
+
+    &:active {
+      opacity: 0.3;
+    }
+  }
+
+  &__nav {
+    width: 100%;
+    padding: $padding 80px;
+    display: flex;
+    justify-content: end;
+  }
+
+  &__list {
+    display: flex;
+    gap: 80px;
+    align-items: center;
+  }
+
+  &__link {
+    color: #D2D2D2;
+    font-size: 1.25rem;
+    text-decoration: none;
+    display: inline-block;
+
+    &:hover {
+      opacity: $opacity;
+    }
+
+    &:active {
+      scale: $scale;
+    }
+  }
+
+  &__search {
+    min-width: 430px;
+    padding: $padding 70px;
+    display: flex;
+    gap: 17px;
+    align-items: center;
+    border-left: $border;
+
+    &-button {
+      color: white;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: transparent;
+      font-size: clamp(1.1rem, 5vw, 1.5rem);
+
+      &:hover {
+        cursor: pointer;
+        opacity: $opacity;
+      }
+
+      &:active {
+        scale: $scale;
+      }
+    }
+
+    &-input {
+      color: white;
+      border: none;
+      font-size: 1.125rem;
+      border-radius: 6px;
+      background-color: transparent;
+
+      &:not(:focus-visible):hover {
+        cursor: pointer;
+        opacity: $opacity;
+      }
+
+      &:focus-visible {
+        padding: 6px;
+      }
+
+      &:not(:focus-visible):active {
+        scale: $scale;
+      }
+
+      &::placeholder {
+        color: #797879;
+      }
+    }
+  }
+
+  &__menu {
+    display: none;
+  }
+  
+  &__menu-button {
+    min-width: 50px;
+    min-height: 50px;
+    z-index: 1;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background-color: transparent;
+
+    &:hover {
+      cursor: pointer;
+      opacity: $opacity;
+    }
+
+    &:active {
+      scale: $scale;
+    }
+  }
+
+  &__menu-icon {
+    width: 100%;
+    height: 12px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+
+    &::before,
+    &::after {
+      content: "";
+      width: 100%;
+      height: 1px;
+      position: relative;
+      display: inline-block;
+      background-color: white;
+    }
+  }
+
+  &__menu-button.open &__menu-icon::before {
+    width: 23px;
+    rotate: 45deg;
+    top: 7px;
+    left: 1.5px;
+  }
+
+  &__menu-button.open &__menu-icon::after {
+    width: 23px;
+    rotate: -45deg;
+    top: -4px;
+  }
+
+  @media (max-width: 1170px) {
+    & {
+      min-height: 50px;
+    }
+
+    &__body {
+      justify-content: space-between;
+    }
+
+    &__logo {
+      min-height: 50px;
+      border-right: none;
+    }
+
+    &__nav {
+      width: fit-content;
+      padding: 0;
+      flex-direction: column;
+    }
+
+    &__list {
+      gap: 16px;
+      align-items: start;
+      flex-direction: column;
+    }
+
+    &__search {
+      width: 100%;
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: -100%;
+      border-left: none;
+      background-color: #2A282A;
+      padding: 16px 24px 32px 24px;
+
+      &-button {
+        min-width: 50px;
+      }
+
+      &-input {
+        width: 100%;
+        padding: 12px 0;
+        border-bottom: $border;
+
+        &:not(:focus-visible):active {
+          opacity: 0.3;
+          scale: 1;
+        }
+      }
+    }
+
+    &__menu-button {
+      display: flex;
+    }
+
+    &__menu {
+      width: 100%;
+      height: 100%;
+      padding: 100px 25px;
+      position: fixed;
+      top: -200%;
+      left: 0px;
+      display: flex;
+      flex-direction: column;
+      overflow: auto;
+      background-color: #2A282A;
+
+      &.open {
+        top: 0px;
+      }
+    }
+  }
+
+  @media (max-width: 380px) {
+    &__logo {
+      min-width: 0px;
+      padding: 0px $padding;
+    }
+  }
+}

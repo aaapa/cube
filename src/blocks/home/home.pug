@@ -1,0 +1,42 @@
+section.home
+  .home__wrapper
+    include ../../components/header/header.pug
+    .home__body
+      include ../sidebar/sidebar.pug
+      .home__content
+        .home__content-body
+          .home__logo
+            h1.home__logo-title Cube
+            span.home__logo-text Интерьерные решения
+          .home__feedback
+            nav.home__feedback-nav
+              ul.home__feedback-list
+                li.home__feedback-list-item
+                  a.home__feedback-link(href="#!", data-tippy-content="Telegram")
+                    span.icon-telegram
+                li.home__feedback-list-item
+                  a.home__feedback-link(href="#!", data-tippy-content="Viber")
+                    span.icon-viber
+                li.home__feedback-list-item
+                  a.home__feedback-phone(href="tel:+375292222222", data-da=".header__body, 1170, 1") +375 (29) 222 22 22
+            a.home__feedback-button(href="#!") Написать директору                   
+        nav.home__nav(data-da=".home__content-body, 1170, 1")
+          ul.home__list
+            li.home__list-item
+              span.home__link.active Двери
+                span.home__link-icon.icon-arrow-right
+            li.home__list-item
+              a.home__link(href="#!") Фурнитура
+                span.home__link-icon.icon-arrow-right
+            li.home__list-item
+              a.home__link(href="#!") Напольные покрытия
+                span.home__link-icon.icon-arrow-right
+            li.home__list-item
+              a.home__link(href="#!") Кухни
+                span.home__link-icon.icon-arrow-right
+            li.home__list-item
+              a.home__link(href="#!") Мягкая мебель
+                span.home__link-icon.icon-arrow-right
+            li.home__list-item
+              a.home__link(href="#!") Окна
+                span.home__link-icon.icon-arrow-right
