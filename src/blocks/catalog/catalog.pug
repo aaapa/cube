@@ -1,0 +1,41 @@
+mixin dropdownOption(value)
+  label.catalog__dropdown-label
+    input.catalog__dropdown-checkbox(type="radio")
+    span= value
+
+section.catalog.fullscreen
+  .catalog__body
+    include ../sidebar/sidebar.pug
+    .catalog__content
+      include ../../components/breadcrumbs/breadcrumbs.pug
+      +breadcrumb([
+        {
+          href: "index.html",
+          text: "Главная"
+        },
+        {
+          href: "doors.html",
+          text: "Двери"
+        },
+        {
+          href: "doors.html",
+          text: "Скрытые"
+        },
+        {
+          text: "Под отделку"
+        }
+      ])
+      h1.catalog__title Скрытые двери под отделку
+      .catalog__filter
+        .catalog__dropdown
+          button.catalog__dropdown-button(type="button")
+            span По популярности
+            span.icon-arrow-short-down
+          .catalog__dropdown-content
+            fieldset.catalog__dropdown-fieldset(data-simplebar)
+              +dropdownOption("Laminam")
+              +dropdownOption("Essent")
+              +dropdownOption("Aviateca")
+              +dropdownOption("Repsol")
+              +dropdownOption("Laminam")
+              +dropdownOption("Laminam")

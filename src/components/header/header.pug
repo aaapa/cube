@@ -1,14 +1,16 @@
+mixin navLink(href, text)
+  li
+    a.header__link(href=href) #{text}
+
 header.header
   .header__body
-    a.header__logo(href="#!", data-tippy-content="Главная страница") C
+    a.header__logo(href="index.html", data-tippy-content="Главная страница") C
     nav.header__nav(data-da=".header__menu, 1170, 0")
       ul.header__list
-        li
-          a.header__link(href="#!") Блог
-        li
-          a.header__link(href="#!") Контакты
+        +navLink("#!", "Блог")
+        +navLink("#!", "Контакты")
     form.header__search
-      button.header__search-button(type="button", aria-label="Нажмите, чтобы начать поиск", aria-expanded="false", data-da=".header__body, 1170, 2" data-tippy-content="Поиск")
+      button.header__search-button(type="button", aria-label="Нажмите, чтобы начать поиск", aria-expanded="false", data-da=".header__body, 1170, 2", data-tippy-content="Поиск")
         span.icon-search
       input.header__search-input(type="search", placeholder="Найти")
     button.header__menu-button(type="button", aria-label="Нажмите, чтобы открыть мобильное меню", aria-expanded="false")

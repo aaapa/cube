@@ -6,6 +6,7 @@
 @import url("../blocks/home/home.scss");
 @import url("../blocks/sidebar/sidebar.scss");
 @import url("../blocks/doors/doors.scss");
+@import url("../blocks/catalog/catalog.scss");
 
 *,
 *::before,
@@ -28,6 +29,10 @@
   color: #0F1B24;
   text-decoration: underline;
   background-color: #ffeca6;
+}
+
+[hidden] {
+  display: none !important;
 }
 
 svg,

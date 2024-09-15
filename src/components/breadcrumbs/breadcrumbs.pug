@@ -1,0 +1,10 @@
+mixin breadcrumb(links, additionalClass)
+  .breadcrumbs(class=additionalClass)
+    nav.breadcrumbs__nav
+      ul.breadcrumbs__list
+        each link, index in links
+          li.breadcrumbs__list-item
+            if index === links.length - 1
+              span.breadcrumbs__link.active= link.text
+            else
+              a.breadcrumbs__link(href=link.href)= link.text

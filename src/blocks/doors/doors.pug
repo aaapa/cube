@@ -1,15 +1,42 @@
+mixin doorCard(image, title, manufacturer, manufacturerName, manufacturerImage, link)
+  li
+    .doors__card
+      img.doors__card-image(src=image)
+      .doors__card-info
+        h6.doors__card-title #{title}
+        .doors__card-manufacturer
+          .doors__card-manufacturer-row
+            span.doors__card-manufacturer-text Производитель:
+            strong.doors__card-manufacturer-name #{manufacturerName}
+            img.doors__card-manufacturer-image(src=manufacturerImage)
+      a.doors__card-button.button(href=link)
+        span Подробнее
+        span.icon-arrow-right
+
+mixin categoryCard(image, title, link)
+  li
+    .doors__categories-card
+      img.doors__categories-card-image(src=image)
+      .doors__categories-card-content
+        h6.doors__categories-card-title #{title}
+        a.button(href=link) Подробнее
+          span.icon-arrow-right
+
 section.doors
   .doors__body
     .doors__top
       include ../sidebar/sidebar.pug
       .doors__content
-        .doors__breadcrumbs.breadcrumbs
-          nav.breadcrumbs__nav
-            ul.breadcrumbs__list
-              li.breadcrumbs__list-item
-                a.breadcrumbs__link(href="#!") Главная
-              li.breadcrumbs__list-item
-                span.breadcrumbs__link.active Двери
+        include ../../components/breadcrumbs/breadcrumbs.pug
+        +breadcrumb([
+          {
+            href: "index.html",
+            text: "Главная"
+          },
+          {
+            text: "Двери"
+          }
+        ], "index-breadcrumbs")
         .doors__content-info
           h1.doors__content-title Двери
           h2.doors__content-desc 
@@ -21,10 +48,47 @@ section.doors
     .doors__main
       .doors__categories
         ul.doors__categories-list
-          li
-            .doors__categories-card
-              img.doors__categories-card-image(src="imgs/doors/hidden.webp")
-              .doors__categories-card-content
-                h6.doors__categories-card-title Скрытые
-                a.button(href="#!") Подробнее
-                  span.icon-arrow-right
+          +categoryCard("imgs/doors/hidden.webp", "Скрытые", "#!")
+          +categoryCard("imgs/doors/input.webp", "Входные", "#!")
+          +categoryCard("imgs/doors/interior.webp", "Межкомнатные", "#!")
+          +categoryCard("imgs/doors/sliding.webp", "Раздвижные", "#!")
+      .doors__categories
+        .doors__categories-content
+          .doors__categories-top
+            span.doors__categories-name Скрытые
+            a.button(href="#!") Перейти в раздел
+              span.icon-arrow-right
+          ul.doors__list
+            +doorCard("imgs/doors/Ossido-Verderame-Lux.webp", "Ossido Verderame Lux", "Laminam", "Laminam", "imgs/doors/laminam.svg", "#!")
+            +doorCard("imgs/doors/Ferro-Nero-Elegante.webp", "Ferro Nero Elegante", "Essent", "Essent", "imgs/doors/essent.svg", "#!")
+            +doorCard("imgs/doors/Bronzo-Oro-Prestigio.webp", "Bronzo Oro Prestigio", "Aviateca", "Aviateca", "imgs/doors/aviateca.svg", "#!")
+            +doorCard("imgs/doors/Titanio-Argento-Regale.webp", "Titanio Argento Regale", "Repsol", "Repsol", "imgs/doors/repsol.svg", "#!")
+          button.doors__choice-button(type="button")
+            span Показать ещё
+            span.icon-arrow-short-down
+        .doors__categories-content
+          .doors__categories-top
+            span.doors__categories-name Межкомнатные
+            a.button(href="#!") Перейти в раздел
+              span.icon-arrow-right
+          ul.doors__list
+            +doorCard("imgs/doors/Ossido-Verderame-Lux.webp", "Ossido Verderame Lux", "Laminam", "Laminam", "imgs/doors/laminam.svg", "#!")
+            +doorCard("imgs/doors/Ferro-Nero-Elegante.webp", "Ferro Nero Elegante", "Essent", "Essent", "imgs/doors/essent.svg", "#!")
+            +doorCard("imgs/doors/Bronzo-Oro-Prestigio.webp", "Bronzo Oro Prestigio", "Aviateca", "Aviateca", "imgs/doors/aviateca.svg", "#!")
+            +doorCard("imgs/doors/Titanio-Argento-Regale.webp", "Titanio Argento Regale", "Repsol", "Repsol", "imgs/doors/repsol.svg", "#!")
+          button.doors__choice-button(type="button")
+            span Показать ещё
+            span.icon-arrow-short-down
+        .doors__categories-content
+          .doors__categories-top
+            span.doors__categories-name Раздвижные
+            a.button(href="#!") Перейти в раздел
+              span.icon-arrow-right
+          ul.doors__list
+            +doorCard("imgs/doors/Ossido-Verderame-Lux.webp", "Ossido Verderame Lux", "Laminam", "Laminam", "imgs/doors/laminam.svg", "#!")
+            +doorCard("imgs/doors/Ferro-Nero-Elegante.webp", "Ferro Nero Elegante", "Essent", "Essent", "imgs/doors/essent.svg", "#!")
+            +doorCard("imgs/doors/Bronzo-Oro-Prestigio.webp", "Bronzo Oro Prestigio", "Aviateca", "Aviateca", "imgs/doors/aviateca.svg", "#!")
+            +doorCard("imgs/doors/Titanio-Argento-Regale.webp", "Titanio Argento Regale", "Repsol", "Repsol", "imgs/doors/repsol.svg", "#!")
+          button.doors__choice-button(type="button")
+            span Показать ещё
+            span.icon-arrow-short-down

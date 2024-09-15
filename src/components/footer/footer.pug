@@ -1,3 +1,11 @@
+mixin footerLink(href, text)
+  li
+    a.footer__link(href=href) #{text}
+
+mixin bottomFooterLink(href, text)
+  li
+    a.footer__bottom-link(href=href) #{text}
+
 footer.footer
   .footer__body.container
     .footer__top
@@ -6,22 +14,14 @@ footer.footer
         span.footer__logo-text Интерьерные решения
       nav.footer__nav
         ul.footer__list
-          li
-            a.footer__link(href="#!") Двери
-          li
-            a.footer__link(href="#!") Фурнитура
-          li
-            a.footer__link(href="#!") Напольные покрытия
-          li
-            a.footer__link(href="#!") Кухни
-          li
-            a.footer__link(href="#!") Мягкая мебель
-          li
-            a.footer__link(href="#!") Окна
-          li
-            a.footer__link(href="#!") Блог
-          li
-            a.footer__link(href="#!") Контакты
+          +footerLink("#!", "Двери")
+          +footerLink("#!", "Фурнитура")
+          +footerLink("#!", "Напольные покрытия")
+          +footerLink("#!", "Кухни")
+          +footerLink("#!", "Мягкая мебель")
+          +footerLink("#!", "Окна")
+          +footerLink("#!", "Блог")
+          +footerLink("#!", "Контакты")
       form.footer__search
         button.footer__search-button(type="button", aria-label="Нажмите, чтобы начать поиск", data-tippy-content="Поиск")
           span.icon-search
@@ -32,9 +32,6 @@ footer.footer
         span Копиравание и скачивание без разрешения автора запрещены.
       nav.footer__bottom-nav
         ul.footer__bottom-list
-          li
-            a.footer__bottom-link(href="#!") Обработка персональных данных
-          li
-            a.footer__bottom-link(href="#!") Политика конфиденциальности
-          li
-            a.footer__bottom-link(href="#!") Согласие с рассылкой
+          +bottomFooterLink("#!", "Обработка персональных данных")
+          +bottomFooterLink("#!", "Политика конфиденциальности")
+          +bottomFooterLink("#!", "Согласие с рассылкой")
